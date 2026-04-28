@@ -4,6 +4,20 @@ sources:
   - name: bitcoin_stg
     database: bitcoin_dev
     schema: bitcoin_dev_stg_schema
+    
+
     tables:
-      - name: tblbitcoin_stg_raw
-        description: "Bitcoin blocks data" 
+      - name: tblbitcoin_stg
+        description: 'Bitcoin blocks data'
+        # The loaded_at_field is used by dbt to determine the freshness of the data in this source. 
+        # It should be a timestamp field that indicates when the data was last updated.
+        config:
+          loaded_at_field: block_timestamp         
+          freshness:
+            warn_after:
+              count: 1
+              period: hour
+            error_after:
+              count: 2
+              period: hour
+            

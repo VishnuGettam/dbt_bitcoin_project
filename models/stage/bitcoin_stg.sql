@@ -17,7 +17,7 @@ select
 round("fee"/"size")::float as fee_per_byte,
 "is_coinbase"::boolean as is_coinbase,
 "outputs"::variant as outputs
-from {{ source('bitcoin_stg','tblbitcoin_stg_raw') }}  
+from {{ source('bitcoin_stg','tblbitcoin_stg') }}  
 
  
 
