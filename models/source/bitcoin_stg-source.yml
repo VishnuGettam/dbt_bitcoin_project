@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bitcoin_stg
+    database: bitcoin_dev
+    schema: bitcoin_dev_stg_schema
+    tables:
+      - name: tblbitcoin_stg_raw
+        description: "Bitcoin blocks data" 
