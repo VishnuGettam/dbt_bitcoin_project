@@ -7,7 +7,7 @@ sources:
     
 
     tables:
-      - name: tblbitcoin_stg
+      - name: tblbitcoin_stg_raw
         description: 'Bitcoin blocks data'
         # The loaded_at_field is used by dbt to determine the freshness of the data in this source. 
         # It should be a timestamp field that indicates when the data was last updated.

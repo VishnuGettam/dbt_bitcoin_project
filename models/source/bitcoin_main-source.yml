@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: bitcoin_target
+    database: bitcoin_dev
+    schema: bitcoin_dev_schema
+    
+
+    tables:
+      - name: tblbitcoin
+        description: 'Bitcoin blocks data'

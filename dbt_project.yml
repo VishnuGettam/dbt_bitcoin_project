@@ -9,7 +9,7 @@ version: '1.0.0'
 profile: 'dbt_bitcoin_project'
 
 vars:
-  is_first_run: true
+  is_first_run: false
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -37,3 +37,9 @@ models:
     # Config indicated by + and applies to all files under models/example/
     stage:
       +materialized: table
+      +transient: true
+      +schema: bitcoin_dev_stg_schema
+    target:
+      +materialized: incremental
+      +transient: false
+      +schema: bitcoin_dev_schema
