@@ -37,7 +37,7 @@ stg.INPUT_VALUE,
 stg.OUTPUT_VALUE,
 stg.FEE_PER_BYTE,
 stg.IS_COINBASE ,
-stg.OUTPUTS ,
+stg.OUTPUTS::variant as OUTPUTS,
 stg.created_at,
 
 {% if not is_incremental() %}
