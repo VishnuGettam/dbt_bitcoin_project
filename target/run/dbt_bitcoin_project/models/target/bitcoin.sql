@@ -1,4 +1,12 @@
 
+  
+    
+
+create or replace table bitcoin_dev.bitcoin_dev_schema.tblbitcoin
+    
+    
+    
+    as (
 
 
 with bitcoin_stg as 
@@ -41,3 +49,8 @@ stg.created_at,
 from bitcoin_stg stg
 
 
+    )
+;
+
+
+  

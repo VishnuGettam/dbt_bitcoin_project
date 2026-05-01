@@ -40,4 +40,3 @@ stg.created_at,
 
 from bitcoin_stg stg
 
-

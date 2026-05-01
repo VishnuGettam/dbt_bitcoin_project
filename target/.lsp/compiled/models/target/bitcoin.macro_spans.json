@@ -71,9 +71,9 @@
         "index": 483
       },
       "stop": {
-        "line": 42,
+        "line": 39,
         "col": 1,
-        "index": 699
+        "index": 530
       }
     }
   },
@@ -92,14 +92,14 @@
     },
     "expanded_span": {
       "start": {
-        "line": 46,
+        "line": 43,
         "col": 1,
-        "index": 727
+        "index": 558
       },
       "stop": {
-        "line": 51,
+        "line": 43,
         "col": 1,
-        "index": 897
+        "index": 558
       }
     }
   }

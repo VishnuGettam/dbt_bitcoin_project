@@ -34,8 +34,8 @@ select
         COALESCE(CAST(OUTPUT_VALUE as varchar),'') as OUTPUT_VALUE,
         COALESCE(CAST(FEE_PER_BYTE as varchar),'') as FEE_PER_BYTE,
         COALESCE(CAST(IS_COINBASE as varchar),'') as IS_COINBASE ,
-        COALESCE(CAST(OUTPUTS as varchar),'')  as OUTPUTS ,
-        current_timestamp() as  created_at
+        OUTPUTS  as OUTPUTS ,
+        to_timestamp_ltz(current_timestamp()) as  created_at
 from {{ source('bitcoin_stg','tblbitcoin_stg_raw') }}  
 
 )

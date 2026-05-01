@@ -1,4 +1,12 @@
 
+  
+    
+
+create or replace transient table bitcoin_dev.bitcoin_dev_stg_schema.tblbitcoin_stg
+    
+    
+    
+    as (
 
 
 with bitcoin_stg as (
@@ -33,3 +41,8 @@ from bitcoin_dev.bitcoin_dev_stg_schema.tblbitcoin_stg_raw
 
 )
 select * from bitcoin_stg
+    )
+;
+
+
+  
