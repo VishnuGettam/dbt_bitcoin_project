@@ -6,8 +6,7 @@ __pycache__/
 # dbt dependencies (installed via dbt deps)
 dbt_packages/
 
-# dbt compiled artifacts
-target/
+
 
 # dbt logs
 logs/
