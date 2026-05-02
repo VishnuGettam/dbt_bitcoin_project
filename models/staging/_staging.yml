@@ -2,10 +2,9 @@ version: 2
 
 sources:
   - name: bitcoin_stg
-    database: bitcoin_dev
-    schema: bitcoin_dev_stg_schema
+    database: "{{ env_var('SNOWFLAKE_DATABASE') }}"    
+    schema: "{{ env_var('SNOWFLAKE_RAW_SCHEMA') }}"
     
-
     tables:
       - name: tblbitcoin_stg_raw
         description: 'Bitcoin blocks data'
@@ -20,4 +19,14 @@ sources:
             error_after:
               count: 2
               period: hour
-            
+
+
+models:
+  - name: bitcoin_stg
+    description: 'Staging models for Bitcoin data'
+    columns:
+      - name: hash_key
+        description: 'The number of the block in the blockchain'
+        tests:
+          - not_null
+          - unique

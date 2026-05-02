@@ -1,9 +1,7 @@
 {{
     config(
-        alias='tblbitcoin_stg',
-        materialization='table',
-        transient='true',
-        unique_key='HASH_KEY',
+        alias='tblbitcoin_stg',        
+        unique_key='HASH_KEY'
         )
 }}
 
