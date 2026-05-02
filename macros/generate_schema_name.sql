@@ -7,7 +7,7 @@
 
     {%- elif target.name == 'prod' -%}
         {# Prod: use clean schema name directly #}
-        {{ custom_schema | trim }}
+        {{ default_schema }}_{{ custom_schema | trim }}
 
     {%- else -%}
         {# Dev: prefix with dev schema to keep dev/prod isolated #}
