@@ -12,4 +12,21 @@ models:
             - not_null
             - unique
   
-            
+
+
+exposures:
+
+  - name: Bitcoin Whale Alert Dashboard
+    label: Whale Alert Dashboard 
+    type: dashboard
+    maturity: high
+    url: https://datastudio.google.com/reporting/624b2006-cb37-462d-8917-51fdc95018bb
+    description: >
+      Bitcoin whale alert reports
+
+    depends_on:
+      - ref("bitcoin_transactions_dim")
+
+    owner:
+      name: VG
+      email: vishnugettam2024@gmail.com

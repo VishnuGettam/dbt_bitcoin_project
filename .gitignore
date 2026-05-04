@@ -6,7 +6,9 @@ __pycache__/
 # dbt dependencies (installed via dbt deps)
 dbt_packages/
 
-
+# environment variable files
+.env
+.env.*
 
 # dbt logs
 logs/
