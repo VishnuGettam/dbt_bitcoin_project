@@ -33,8 +33,6 @@ jobs:
       - name: Set up dbt profile and private key
         run: |
           mkdir -p ~/.dbt
-
-          # ✅ Generate profiles.yml dynamically using env vars
           cat > ~/.dbt/profiles.yml << EOF
           dbt_bitcoin_project:
             target: dev
@@ -51,24 +49,22 @@ jobs:
                 warehouse: compute_wh
                 threads: 6
           EOF
-
-          # ✅ Write private key
           echo "$DBT_PRIVATE_KEY" > ~/.dbt/rsa_key
           chmod 600 ~/.dbt/rsa_key
         env:
           DBT_PRIVATE_KEY: ${{ secrets.DBT_PRIVATE_KEY }}
+
+      - name: Clean dbt artifacts              
+        run: dbt clean
 
       - name: Install dbt deps
         run: dbt deps
 
       - name: Run dbt debug
         run: dbt debug
-    
-      - name: Validate dbt models
-        run: |
-          cat macros/create_latest_version_view.sql
-          dbt parse
-          dbt compile
+
+      - name: Run dbt parse                    
+        run: dbt parse --no-partial-parse
 
       - name: Run dbt
-        run: dbt run
+        run: dbt run --no-partial-parse         
