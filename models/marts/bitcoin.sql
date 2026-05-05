@@ -18,7 +18,7 @@ with bitcoin_stg as (
         OUTPUT_VALUE,
         FEE_PER_BYTE,
         IS_COINBASE,
-        OUTPUTS::variant as OUTPUTS,    -- ✅ Cast once here in CTE
+        OUTPUTS::variant as OUTPUTS,     
         created_at
     from {{ ref('bitcoin_stg') }}
 )
@@ -33,7 +33,7 @@ select
     stg.OUTPUT_VALUE,
     stg.FEE_PER_BYTE,
     stg.IS_COINBASE,
-    stg.OUTPUTS,                        -- ✅ Already cast in CTE, no need again
+    stg.OUTPUTS,                         
     stg.created_at,
 
     {% if not is_incremental() %}
