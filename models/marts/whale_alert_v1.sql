@@ -6,6 +6,7 @@
     )
 }}
 
+
 with bitcoin_whales as (
     select 
         btd.f_address,
