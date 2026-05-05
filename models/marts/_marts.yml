@@ -27,6 +27,7 @@ models:
             enabled: false
           deprecation_date: 2026-12-31
           
+          
         - v: 2
           defined_in: whale_alert_v2
           config:
@@ -34,6 +35,7 @@ models:
           columns:
             - include: all
               exclude: [total_sent_usd]
+          
                
            
 

@@ -20,6 +20,6 @@ select
     bw.f_address,
     bw.total_sent,
     bw.total_transactions,
-    {{ convert_usd('bw.total_sent') }} as total_sent_usd
-from bitcoin_whales bw  
+    {{ convert_usd('bw.total_sent') }} as total_sent_usd 
+from bitcoin_whales bw   
 order by total_sent_usd desc

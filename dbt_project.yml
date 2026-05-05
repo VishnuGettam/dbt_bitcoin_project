@@ -23,6 +23,8 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+on-run-end:
+  - "{{ create_latest_version_view( results )}}"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -41,7 +43,8 @@ models:
       +materialized: incremental
       +transient: false
       +schema: core
-      +on_schema_change: append_new_columns
+      +on_schema_change: append_new_columns 
+        
 seeds:
   dbt_bitcoin_project:
     # Config indicated by + and applies to all files under seeds/
