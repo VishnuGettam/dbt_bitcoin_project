@@ -3,6 +3,7 @@
         alias='tblbitcoin',
         materialized='incremental',
         unique_key='HASH_KEY'
+         
     )       
 }}
 

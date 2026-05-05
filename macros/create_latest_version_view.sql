@@ -1,5 +1,7 @@
 {% macro create_latest_version_view(results) %}
 
+
+
     {% if execute %}
 
         {% for result in results %}
