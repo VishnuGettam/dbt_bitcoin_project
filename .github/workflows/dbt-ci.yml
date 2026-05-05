@@ -63,6 +63,12 @@ jobs:
 
       - name: Run dbt debug
         run: dbt debug
+    
+      - name: Validate dbt models
+        run: |
+          cat macros/create_latest_version_view.sql
+          dbt parse
+          dbt compile
 
       - name: Run dbt
         run: dbt run
